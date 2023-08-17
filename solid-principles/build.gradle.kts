@@ -7,7 +7,7 @@ group = "org.example"
 version = "1.0-SNAPSHOT"
 
 application {
-    mainClass.set("org.example.Demo")
+    mainClass.set("org.example.O.Demo")
 }
 
 repositories {
