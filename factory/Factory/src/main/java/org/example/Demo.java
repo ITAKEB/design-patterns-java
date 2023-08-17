@@ -1,7 +1,6 @@
 package org.example;
 
 
-
 class Point {
     private double x, y;
 
@@ -10,20 +9,24 @@ class Point {
         this.y = y;
     }
 
-    public static  Point newCartesianPoint(double x, double y){
-        return new Point(x,y);
-    }
+    public static class Factory {
+        public static Point newCartesianPoint(double x, double y) {
 
-    public static Point newPolarPoint(double rho, double theta){
-        return new Point(rho*Math.cos(theta), rho*Math.sin(theta));
+            return new Point(x, y);
+        }
+
+        public static Point newPolarPoint(double rho, double theta) {
+            return new Point(rho * Math.cos(theta), rho * Math.sin(theta));
+        }
     }
 
 }
 
 public class Demo {
     public static void main(String[] args) {
-        Point cartesianPoint = Point.newCartesianPoint(2, 3);
-        Point polarPoint = Point.newPolarPoint(2, 3);
+//        Point cartesianPoint = Point.newCartesianPoint(2, 3);
+//        Point polarPoint = Point.newPolarPoint(2, 3);
+        Point cartesianPoint = new Point.Factory().newCartesianPoint(5, 6);
     }
 
 }
